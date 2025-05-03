@@ -6,10 +6,10 @@
 |-----------|-----------------------|--------------|-----------------------|
 | Naadir D  | Developer & Author     | 2024         | CCMI Systems & Data Team |
 
-![Demo Screenshot](images/demoscreen.jpg)
-
 ## Overview
 This demo site was built by Naadir D as a portfolio project to showcase a consolidated dashboard for the CCMI Data Team's work. The site integrates built-in Power Apps and Power BI reports, along with documentation, code snippets, and quick links to production systems and tools. It is designed to streamline access to key resources and automate workflows, providing a centralized hub for the team's data-driven operations.
+
+![Demo Screenshot](images/demoscreen.jpg)
 
 ### Power Apps
 - Access a curated selection of internal CCMI Power Apps used by the team.
