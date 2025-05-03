@@ -1,0 +1,193 @@
+/* carousel.css */
+
+/* General Carousel Styles */
+.pc-carousel-container {
+    position: relative;
+    max-width: 1000px; /* Increased width for a slightly wider carousel */
+    margin: 50px auto;
+    overflow: hidden;
+    border: 2px solid #ddd;
+    border-radius: 15px;
+    background-color: #fff;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* Carousel Wrapper for Partial Slides */
+.pc-carousel-wrapper {
+    overflow: hidden;
+    width: 100%;
+    padding: 0 200px; /* Increased padding for wider preview */
+    box-sizing: border-box;
+    transition: padding 0.5s ease-in-out;
+}
+
+/* Carousel Slides */
+.pc-carousel {
+    position: relative; /* Ensure the parent container is positioned */
+    width: 100%; /* Set the carousel to full width */
+    margin: 0; /* Remove any margin */
+    padding: 0; /* Remove any padding */
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Individual Slide */
+.pc-carousel-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: transform 0.5s, opacity 0.5s;
+}
+
+/* Image Container */
+.pc-carousel-image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+/* Main Image */
+.pc-carousel-main-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: contain;
+    border: 5px solid #fff;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    background-color: #fff;
+    display: block;
+    cursor: pointer; /* Indicates that the image is clickable */
+}
+
+.carousel-item {
+    position: relative; /* Position relative for absolute positioning of the label */
+    width: 100%; /* Ensure each item takes full width */
+}
+
+.pc-carousel-image {
+    width: 100%; /* Ensure the main image takes full width */
+    height: auto; /* Maintain aspect ratio */
+    border: 5px solid white; /* Add white border to the main image */
+    border-radius: 10px; /* Match border radius if needed */
+}
+.carousel-label {
+    position: absolute; /* Position the label absolutely within the item */
+    bottom: 480px; /* Move the label higher */
+    left: -150px; /* Position from the left */
+    color: white; /* Text color */
+    background-color: rgba(0, 0, 0, 0.1); /* Semi-transparent background for better visibility */
+    padding: 5px 10px; /* Padding around the text */
+    border-radius: 5px; /* Rounded corners for the label */
+    font-size: 16px; /* Font size */
+}
+
+.pc-carousel-reflection {
+    width: 100%; /* Match the width of the main image */
+    height: 100px; /* Adjust the height as needed */
+    object-fit: cover;
+    transform: scaleY(-1); /* Flip the image vertically */
+    opacity: 1; /* Set initial opacity to 1 for the mask to work */
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)); /* Fade in towards bottom */
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)); /* For Safari */
+    border: 5px solid white; /* Add white border to the reflection */
+    border-radius: 0 0 10px 10px; /* Match border radius for the bottom */
+    margin-top: 10px; /* Add a small gap between the image and reflection */
+    pointer-events: none; /* Ensure reflection doesn't capture mouse events */
+}
+
+/* Navigation Buttons */
+.pc-carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    border: none;
+    color: #fff;
+    padding: 12px 18px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 24px;
+    transition: background-color 0.3s, transform 0.3s;
+    z-index: 10;
+}
+
+.pc-carousel-button:hover {
+    background-color: rgba(0,0,0,0.8);
+    transform: scale(1.1);
+}
+
+.pc-carousel-prev {
+    left: 20px;
+}
+
+.pc-carousel-next {
+    right: 20px;
+}
+
+/* Indicators */
+.pc-carousel-indicators {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+}
+
+.pc-carousel-indicator {
+    width: 14px;
+    height: 14px;
+    background-color: rgba(0,0,0,0.3);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.pc-carousel-indicator.active {
+    background-color: rgba(0,0,0,0.7);
+}
+
+/* Active and Inactive Slides */
+.pc-carousel-slide.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.pc-carousel-slide:not(.active) {
+    opacity: 0.5;
+    transform: scale(0.8);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .pc-carousel-wrapper {
+        padding: 0 150px;
+    }
+}
+
+@media (max-width: 900px) {
+    .pc-carousel-wrapper {
+        padding: 0 80px;
+    }
+}
+
+@media (max-width: 600px) {
+    .pc-carousel-wrapper {
+        padding: 0 30px;
+    }
+
+    .pc-carousel-button {
+        padding: 10px 14px;
+        font-size: 20px;
+    }
+
+    .pc-carousel-indicator {
+        width: 12px;
+        height: 12px;
+    }
+}

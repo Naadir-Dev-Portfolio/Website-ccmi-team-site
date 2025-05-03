@@ -1,0 +1,183 @@
+/* Main Content Styles */
+.main-content {
+    position: relative; /* Position relative for the pseudo-element */
+    background-image: url('../images/hex_bg_op30.png'); /* Path to your background image */
+    background-size: cover; /* Cover the entire section */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    padding: 60px 40px; /* Ensure padding is applied */
+    color: #ffffff; /* Text color for contrast */
+    overflow: hidden; /* Ensure the pseudo-element doesn't overflow */
+    min-height: 900px;
+}
+
+/* Overlay Gradient */
+.main-content::before {
+    content: ''; /* Required for pseudo-elements */
+    position: absolute; /* Position it absolutely */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    right: 0; /* Align to the right */
+    bottom: 0; /* Align to the bottom */
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.4) 0%, /* Dark shadow at the top */
+        rgba(0, 0, 0, 0.2) 10px, /* Slightly lighter shadow */
+        rgba(0, 0, 0, 0) 20px /* Transparent at the bottom */
+    ); /* Gradient from dark to transparent */
+    z-index: 1; /* Ensure it sits above the background image */
+}
+
+.main-content > * {
+    position: relative; /* Ensure content is above the gradient */
+    z-index: 2; /* Content above the gradient */
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+    color: var(--text-color);
+}
+
+/* Content Wrapper for two columns */
+.content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* Left Column */
+.left-column {
+    flex: 1 1 calc(60% - 20px);
+    margin: 10px;
+}
+
+/* Right Column */
+.right-column {
+    flex: 1 1 calc(35% - 20px);
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Word Logo */
+.word-logo {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Documentation Search Styles */
+.documentation-search {
+    margin-top: 20px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.search-container label {
+    margin-right: 10px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+#ccmi-id-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid var(--dark-background);
+    border-radius: 5px;
+    margin-right: 10px;
+    font-size: 16px;
+    background-color: var(--light-background);
+    color: var(--text-color);
+}
+
+#search-button {
+    padding: 10px 20px;
+    background-color: var(--dark-background);
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#search-button:hover {
+    background-color: var(--hover-primary);
+}
+
+#file-name-display {
+    margin-top: 20px;
+    font-size: 16px;
+    color: var(--text-color);
+}
+
+#file-name-display label {
+    font-weight: bold;
+}
+
+#file-name-display select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+#file-name-display button {
+    padding: 10px 20px;
+    background-color: var(--dark-background);
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#file-name-display button:hover {
+    background-color: var(--hover-primary);
+}
+
+.open-document-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: var(--dark-background);
+    color: #ffffff;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.open-document-button:hover {
+    background-color: var(--hover-primary);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+    }
+
+    .left-column,
+    .right-column {
+        flex: 1 1 100%;
+        margin: 0;
+    }
+
+    .right-column {
+        margin-top: 20px;
+    }
+}
+
+.large-logo {
+    width: 100%; /* Set to desired width, e.g., 100% of the column */
+    max-width: 9000px; /* Set a maximum width to prevent it from being too large */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Ensures the image doesn't add extra space */
+    margin: 0 auto; /* Center the image */
+}

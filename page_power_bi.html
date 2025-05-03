@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Power BI Reports - CCMI Systems & Data Team</title>
+    <!-- CCMI Logo Favicon -->
+    <link rel="icon" href="favicon.png" type="image/x-icon">
+    <!-- Global Styles -->
+    <link rel="stylesheet" href="css/global_styles.css">
+    <!-- Component Styles -->
+    <link rel="stylesheet" href="css/additional_menu_styles.css">
+    <link rel="stylesheet" href="css/main_content_styles.css">
+    <link rel="stylesheet" href="css/page_power_apps.css">
+    <!-- Page-specific Styles -->
+    <link rel="stylesheet" href="css/page_power_bi.css">
+    <link rel="stylesheet" href="css/additional_hero_styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside id="sidebar">
+        <div class="sidebar-content">
+            <!-- Toggle Button -->
+            <button id="toggle-sidebar"><i class="fas fa-chevron-left"></i></button>
+
+            <!-- Team Logo -->
+            <div class="logo">
+                <img src="images/teamlogo3.png" alt="Team Logo">
+            </div>
+            <!-- Navigation -->
+            <nav class="nav">
+                <h3>Navigation</h3>
+                <ul>
+                    <li class="spacer"></li>  <!-- Spacer-->
+                    <li><a href="index.html">
+                        <img src="icons/menu-icon-home.png" alt="Home Icon" class="menu-icon">
+                        <span class="menu-text">Home</span>
+                    </a></li>
+                    <li><a href="page_power_apps.html">
+                        <img src="icons/menu-icon-papp.png" alt="CCMI Power Apps Icon" class="menu-icon">
+                        <span class="menu-text">CCMI Power Apps</span>
+                    </a></li>
+                    <li><a href="page_power_bi.html">
+                        <img src="icons/menu-icon-pbi.png" alt="PowerBI Icon" class="menu-icon">
+                        <span class="menu-text">CCMI PowerBI Reports</span>
+                    </a></li>
+                    <li><a href="page_documents.html">
+                        <img src="icons/menu-icon-doc.png" alt="CCMI Documentation Icon" class="menu-icon">
+                        <span class="menu-text">CCMI Documentation</span>
+                    </a></li>
+
+                    <li><a href="page_snippets.html">
+                        <img src="icons/menu-icon-snippet.png" alt="Code Snippets Icon" class="menu-icon">
+                        <span class="menu-text">Code Snippets</span>
+                    </a></li>
+                    <li>
+                        <a href="https://ccmi-genai.streamlit.app/" onclick="return showApiKeyWarning(event, 'To use this tool you will need an API key from Google. This is for development and experimental purposes only, please speak to Naadir if you want to learn how to obtain an API key.')" target="_blank">
+                            <img src="icons/menu-icon-ai.png" alt="CCMI Gen AI Assistant" class="menu-icon">
+                            <span class="menu-text">CCMI Gen AI Assistant</span>
+                        </a>
+                    </li>
+                    <li class="spacer"></li>  <!-- Spacer-->
+                    <li class="custom-divider"></li>
+                    <li class="spacer"></li> 
+
+                    <li>
+                        <a href="https://cadentgasltd.sharepoint.com/sites/hub/sitepages/home(1).aspx" target="_blank">
+                            <img src="icons/icon.png" alt="Cadent Depot Icon" class="menu-icon">
+                            <span class="menu-text">Cadent Depot</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://cadentukmysap.gd-uk.net/irj/portal" target="_blank">
+                            <img src="icons/icon.png" alt="MySAP Services Icon" class="menu-icon">
+                            <span class="menu-text">MySAP Services</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://performancemanager.successfactors.eu/login?company=cadentgaslP2#/login" target="_blank">
+                            <img src="icons/icon.png" alt="Success Factors Icon" class="menu-icon">
+                            <span class="menu-text">Success Factors</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://cadent.service-now.com/sp" target="_blank">
+                            <img src="icons/icon.png" alt="Service Icon" class="menu-icon">
+                            <span class="menu-text">Cadent IT Service Now Portal</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Shortcut Links Section -->
+            <nav class="nav">
+                <h3>Production Systems</h3>
+                <!-- Dynamic JavaScript Menu -->
+                <div id="menu-container">
+                    <!-- Menu will be injected here via JavaScript -->
+                </div>
+            </nav>
+
+	        <br></br>
+
+            <!-- Date Copy Feature -->
+            <div class="date-copy-section">
+                <h3>Yesterday's Date</h3>
+                <div class="date-display">
+                    <p class="current-date"></p>
+                    <div class="date-buttons">
+                        <button onclick="changeDateFormat()">Change Format</button>
+                        <button onclick="copyToClipboard(document.querySelector('.current-date').textContent)">Copy</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer>
+                <p><span id="current-year"></span> Made by Naadir D for the CCMI Team</p>
+            </footer>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Header Area -->
+        <section class="page-header hero applications-hero">
+            <div class="hero-content">
+                <div class="overlay"></div> <!-- Overlay div -->
+                <div class="power-apps-header">
+                    <img src="icons/pbi.png" alt="Power BI Icon" style="height: 70px; width: 70px;">
+                    <h2>Power BI Reports</h2>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reports Section -->
+        <section class="reports-section">
+
+            <h2 class="section-title">Internal CCMI Power BI Reports</h2>
+                <div class="section-title-text">
+                    <p>
+                        Power BI Reports used internally by the CCM Team
+                    </p>
+                </div>
+
+            <!-- Report 1 (Expanded by default) -->
+            <div class="report-item">
+                <button class="expand-button" data-report-id="report1" data-report-name="Report/Dataflow Finder" onclick="toggleReport(event)" aria-expanded="true">Hide Report/Dataflow Finder</button>
+                <div id="report1" class="report-content">
+                    <div class="report-actions">
+                        <!-- Removed zoom, refresh, fullscreen buttons -->
+                    </div>
+                    <div class="iframe-wrapper">
+                        <iframe id="iframe1" title="Power BI Reports & Dataflows"
+                            src="https://example.com"
+                            frameborder="0"
+                            allowFullScreen="true"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Report 2 (Collapsed by default) -->
+            <div class="report-item">
+                <button class="expand-button" data-report-id="report2" data-report-name="CCMI Team Summary" onclick="toggleReport(event)" aria-expanded="false">Show CCMI Team Summary</button>
+                <div id="report2" class="report-content" style="display: none;">
+                    <div class="report-actions">
+                        <!-- Removed zoom, refresh, fullscreen buttons -->
+                    </div>
+                    <div class="iframe-wrapper">
+                        <iframe id="iframe2" title="CCMI Team Summary"
+                            src="https://example.com"
+                            frameborder="0"
+                            allowFullScreen="true"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add more reports as needed -->
+
+        </section>
+
+        <!-- Footer Banner -->
+        <div class="footer-banner">
+            <img src="images/banner.png" alt="Footer Banner">
+            <p class="footer-text">Created in 2024 by Naadir D for the CCMI Team</p>
+        </div>
+    </main>
+
+    <!-- Include JavaScript Files -->
+    <script src="js/global_scripts.js"></script>
+    <script src="js/menu_scripts.js"></script>
+    <script src="js/power_bi_functions.js"></script>
+
+</body>
+</html>

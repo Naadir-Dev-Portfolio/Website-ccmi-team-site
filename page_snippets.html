@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CCMI Documentation - CCMI Systems & Data Team</title>
+    <!-- CCMI Logo Favicon -->
+    <link rel="icon" href="favicon.png" type="image/x-icon">
+    <!-- Global Styles -->
+    <link rel="stylesheet" href="css/global_styles.css">
+    <!-- Component Styles -->
+    <link rel="stylesheet" href="css/additional_menu_styles.css">
+    <link rel="stylesheet" href="css/main_content_styles.css">
+    <link rel="stylesheet" href="css/page_power_apps.css">
+    
+    <link rel="stylesheet" href="css/additional_hero_styles.css">
+    <!-- New Styles for Documentation Page -->
+    <link rel="stylesheet" href="css/page_documents.css">
+    <link rel="stylesheet" href="css/page_power_bi.css">
+    <link rel="stylesheet" href="css/page_snippets.css">
+
+    <!-- Prism.js CSS for Syntax Highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet" />
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside id="sidebar">
+        <div class="sidebar-content">
+            <!-- Toggle Button -->
+            <button id="toggle-sidebar"><i class="fas fa-chevron-left"></i></button>
+
+            <!-- Team Logo -->
+            <div class="logo">
+                <img src="images/teamlogo3.png" alt="Team Logo">
+            </div>
+            <!-- Navigation -->
+            <nav class="nav">
+                <h3>Navigation</h3>
+                <ul>
+                    <li class="spacer"></li>  <!-- Spacer-->
+                    <li><a href="index.html">
+                        <img src="icons/menu-icon-home.png" alt="Home Icon" class="menu-icon">
+                        <span class="menu-text">Home</span>
+                    </a></li>
+                    <li><a href="page_power_apps.html">
+                        <img src="icons/menu-icon-papp.png" alt="CCMI Power Apps Icon" class="menu-icon">
+                        <span class="menu-text">CCMI Power Apps</span>
+                    </a></li>
+                    <li><a href="page_power_bi.html">
+                        <img src="icons/menu-icon-pbi.png" alt="PowerBI Icon" class="menu-icon">
+                        <span class="menu-text">CCMI PowerBI Reports</span>
+                    </a></li>
+                    <li><a href="page_documents.html">
+                        <img src="icons/menu-icon-doc.png" alt="CCMI Documentation Icon" class="menu-icon">
+                        <span class="menu-text">CCMI Documentation</span>
+                    </a></li>
+
+                    <li><a href="page_snippets.html">
+                        <img src="icons/menu-icon-snippet.png" alt="Code Snippets Icon" class="menu-icon">
+                        <span class="menu-text">Code Snippets</span>
+                    </a></li>
+                    <li>
+                        <a href="https://ccmi-genai.streamlit.app/" onclick="return showApiKeyWarning(event, 'To use this tool you will need an API key from Google. This is for development and experimental purposes only, please speak to Naadir if you want to learn how to obtain an API key.')" target="_blank">
+                            <img src="icons/menu-icon-ai.png" alt="CCMI Gen AI Assistant" class="menu-icon">
+                            <span class="menu-text">CCMI Gen AI Assistant</span>
+                        </a>
+                    </li>
+                    <li class="spacer"></li>  <!-- Spacer-->
+                    <li class="custom-divider"></li>
+                    <li class="spacer"></li> 
+
+                    <li>
+                        <a href="#" onclick="showDemoAlert(event)">
+                            <img src="icons/icon.png" alt="Depot Icon" class="menu-icon">
+                            <span class="menu-text">Depot</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="showDemoAlert(event)">
+                            <img src="icons/icon.png" alt="MySAP Services Icon" class="menu-icon">
+                            <span class="menu-text">MySAP Services</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="showDemoAlert(event)">
+                            <img src="icons/icon.png" alt="Success Factors Icon" class="menu-icon">
+                            <span class="menu-text">Success Factors</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="showDemoAlert(event)">
+                            <img src="icons/icon.png" alt="Service Icon" class="menu-icon">
+                            <span class="menu-text">IT Service Now Portal</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Shortcut Links Section -->
+            <nav class="nav">
+                <h3>Production Systems</h3>
+                <!-- Dynamic JavaScript Menu -->
+                <div id="menu-container">
+                    <!-- Menu will be injected here via JavaScript -->
+                </div>
+            </nav>
+
+	        <br></br>
+
+            <!-- Date Copy Feature -->
+            <div class="date-copy-section">
+                <h3>Yesterday's Date</h3>
+                <div class="date-display">
+                    <p class="current-date"></p>
+                    <div class="date-buttons">
+                        <button onclick="changeDateFormat()">Change Format</button>
+                        <button onclick="copyToClipboard(document.querySelector('.current-date').textContent)">Copy</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer>
+                <p><span id="current-year"></span> Made by Naadir D for the CCMI Team</p>
+            </footer>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Header Area -->
+        <section class="page-header hero documentation-hero">
+            <div class="hero-content">
+                <div class="overlay"></div> <!-- Overlay div -->
+                <div class="power-apps-header">
+                    <img src="icons/code.png" alt="Code Icon" style="height: 70px; width: 70px; margin-top: 30px;">
+                    <h2>Code Snippets</h2>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Body Content -->
+        <section class="main-content">
+
+            <h2 class="section-title">Code Snippets</h2>
+            <div class="section-title-text">
+                <p>
+                    Browse commonly used functions and scripts across various programming languages and tools.
+                </p>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Search for a snippet..." />
+                <i class="fas fa-search search-icon"></i>
+            </div>
+
+            <!-- Code Snippets Section -->
+            <div id="code-snippets-section">
+                <div id="snippets-container"></div>
+            </div>
+        </section>
+
+        <div class="image-wrapper" style="position: relative; width: 100%; height: 200px;"> <!-- Set a fixed height -->
+            <img src="images/code_snippets_banner.jpg" alt="Footer Banner" style="width: 100%; height: 100%; object-fit: cover;"> <!-- Use object-fit to cover -->
+            <div class="gradient-overlay" style="position: absolute; top: 0; left: 0; right: 0; height: 20px; background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);"></div> <!-- Made the shadow lighter -->
+        </div>
+        <!-- Footer Banner -->
+        <div class="footer-banner">
+            <img src="images/banner.png" alt="Footer Banner">
+            <p class="footer-text">Created in 2024 by Naadir D for the CCMI Team</p>
+        </div>
+    </main>
+
+    <!-- Prism.js JS for Syntax Highlighting -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-vb.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-dax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-excel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-powerfx.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-m.min.js"></script>
+
+
+    <!-- Include JavaScript Files -->
+    <script src="js/global_scripts.js"></script>
+    <script src="js/menu_scripts.js"></script>
+    <script src="js/snippets.js"></script>
+    <script>
+        // Script to handle snippets rendering and search functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            const snippetsContainer = document.getElementById('snippets-container');
+            const searchInput = document.getElementById('search-input');
+
+            // Define the order of categories
+            // Define the order of categories
+            const order = ["Power Query M", "VBA", "Excel Formulas", "DAX", "Power Fx", "JavaScript"];
+            const orderedCategories = order.filter(category => codeSnippets.hasOwnProperty(category));
+
+            // Function to create and render snippets
+            function renderSnippets(filteredSnippets) {
+                snippetsContainer.innerHTML = ''; // Clear existing snippets
+
+                // Group snippets by category
+                const groupedSnippets = {};
+
+                orderedCategories.forEach(category => {
+                    groupedSnippets[category] = [];
+                });
+
+                filteredSnippets.forEach(({ category, snippet }) => {
+                    if (groupedSnippets[category]) {
+                        groupedSnippets[category].push(snippet);
+                    }
+                });
+
+                // Render each category with its snippets
+                orderedCategories.forEach((category, index) => {
+                    const snippets = groupedSnippets[category];
+                    if (snippets.length === 0) return; // Skip categories with no matching snippets
+
+                    // Create Category Section
+                    const categoryDiv = document.createElement('div');
+                    categoryDiv.className = 'snippet-category';
+
+                    // Category Header
+                    const categoryHeader = document.createElement('div');
+                    categoryHeader.className = 'snippet-category-header';
+                    categoryHeader.innerHTML = `${category} <i class="fas fa-chevron-down"></i>`;
+                    categoryHeader.addEventListener('click', () => {
+                        categoryContent.classList.toggle('active');
+                        categoryHeader.classList.toggle('active');
+                        const icon = categoryHeader.querySelector('i.fas');
+                        if (categoryContent.classList.contains('active')) {
+                            icon.classList.remove('fa-chevron-down');
+                            icon.classList.add('fa-chevron-up');
+                        } else {
+                            icon.classList.remove('fa-chevron-up');
+                            icon.classList.add('fa-chevron-down');
+                        }
+                    });
+
+                    // Category Content
+                    const categoryContent = document.createElement('div');
+                    categoryContent.className = 'snippet-category-content';
+                    // Expand by default if it's Power Query M
+                    if (category === "Power Query M") {
+                        categoryContent.classList.add('active');
+                        categoryHeader.classList.add('active');
+                        const icon = categoryHeader.querySelector('i.fas');
+                        icon.classList.remove('fa-chevron-down');
+                        icon.classList.add('fa-chevron-up');
+                    }
+
+                    // Add Snippets
+                    snippets.forEach(snippet => {
+                        const snippetDiv = document.createElement('div');
+                        snippetDiv.className = 'snippet';
+
+                        // Snippet Header
+                        const snippetHeader = document.createElement('div');
+                        snippetHeader.className = 'snippet-header';
+                        snippetHeader.innerHTML = `${snippet.name} <i class="fas fa-chevron-down"></i>`;
+                        snippetHeader.addEventListener('click', () => {
+                            snippetContent.classList.toggle('active');
+                            snippetHeader.classList.toggle('active');
+                            const icon = snippetHeader.querySelector('i.fas');
+                            if (snippetContent.classList.contains('active')) {
+                                icon.classList.remove('fa-chevron-down');
+                                icon.classList.add('fa-chevron-up');
+                            } else {
+                                icon.classList.remove('fa-chevron-up');
+                                icon.classList.add('fa-chevron-down');
+                            }
+                        });
+
+                        // Snippet Content
+                        const snippetContent = document.createElement('div');
+                        snippetContent.className = 'snippet-content';
+
+                        const pre = document.createElement('pre');
+                        const code = document.createElement('code');
+                        // Determine the language class for Prism.js
+                        let languageClass = '';
+                        switch (category) {
+                            case 'VBA':
+                                languageClass = 'language-vb';
+                                break;
+                            case 'Power Query M':
+                                languageClass = 'language-m';
+                                break;
+                            case 'Excel Formulas':
+                                languageClass = 'language-excel';
+                                break;
+                            case 'DAX':
+                                languageClass = 'language-dax';
+                                break;
+                            case 'Power Fx':
+                                languageClass = 'language-powerfx';
+                                break;
+                            case 'JavaScript':
+                                languageClass = 'language-javascript';
+                                break;
+                            default:
+                                languageClass = 'language-none';
+                        }
+                        code.className = languageClass;
+                        code.textContent = snippet.content;
+
+                        pre.appendChild(code);
+                        snippetContent.appendChild(pre);
+
+                        // Copy Button
+                        const copyBtn = document.createElement('button');
+                        copyBtn.className = 'copy-btn';
+                        copyBtn.textContent = 'Copy';
+                        copyBtn.addEventListener('click', () => {
+                            navigator.clipboard.writeText(snippet.content)
+                                .then(() => {
+                                    // Change button text temporarily to indicate success
+                                    copyBtn.textContent = 'Copied!';
+                                    setTimeout(() => {
+                                        copyBtn.textContent = 'Copy';
+                                    }, 2000);
+                                })
+                                .catch(err => console.error('Error copying:', err));
+                        });
+
+                        snippetContent.appendChild(copyBtn);
+
+                        // Assemble Snippet
+                        snippetDiv.appendChild(snippetHeader);
+                        snippetDiv.appendChild(snippetContent);
+
+                        // Add to Category Content
+                        categoryContent.appendChild(snippetDiv);
+                    });
+
+                    // Assemble Category
+                    categoryDiv.appendChild(categoryHeader);
+                    categoryDiv.appendChild(categoryContent);
+
+                    // Add to Snippets Container
+                    snippetsContainer.appendChild(categoryDiv);
+                });
+
+                // Highlight with Prism.js after rendering
+                Prism.highlightAll();
+            }
+
+            // Initial rendering of all snippets
+            let allSnippets = [];
+            orderedCategories.forEach(category => {
+                const snippets = codeSnippets[category];
+                snippets.forEach(snippet => {
+                    allSnippets.push({ category, snippet });
+                });
+            });
+            renderSnippets(allSnippets);
+
+            // Search functionality
+            searchInput.addEventListener('input', () => {
+                const query = searchInput.value.toLowerCase().trim();
+                if (query === '') {
+                    // If search is empty, show all snippets
+                    renderSnippets(allSnippets);
+                    return;
+                }
+
+                // Filter snippets based on query (search in name and content)
+                const filteredSnippets = allSnippets.filter(({ snippet }) => {
+                    return snippet.name.toLowerCase().includes(query) || snippet.content.toLowerCase().includes(query);
+                });
+
+                renderSnippets(filteredSnippets);
+            });
+        });
+    </script>
+</body>
+</html>

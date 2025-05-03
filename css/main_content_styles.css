@@ -1,0 +1,251 @@
+
+/* main_content_styles.css */
+
+/* Main Content Styles */
+#main-content {
+    margin-left: 335px;
+    padding: 0;
+    width: calc(100% - 335px); /* Ensure full width minus sidebar */
+    overflow-y: auto;
+    background-color: var(--light-background);
+    transition: margin-left 0.3s ease;
+}
+
+#sidebar.collapsed + #main-content {
+    margin-left: 80px;
+    width: calc(100% - 80px); /* Adjust width when sidebar is collapsed */
+}
+
+/* Sections */
+section {
+    padding: 60px 40px; /* Increased left and right padding to 40px */
+    background-color: var(--light-background);
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 32px;
+    position: relative;
+    color: var(--text-color);
+}
+
+section h2::after {
+    content: '';
+    width: 50px;
+    height: 3px;
+    background-color: var(--primary-color);
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+section p {
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: center;
+    color: var(--text-color);
+    /* Removed max-width and margin properties */
+}
+
+.showcase {
+    position: relative; /* Position relative for the pseudo-element */
+    background-image: url('../images/hex_bg_op30.png'); /* Path to your background image */
+    background-size: cover; /* Cover the entire section */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    padding: 60px 40px; /* Ensure padding is applied */
+    color: #ffffff; /* Text color for contrast */
+    overflow: hidden; /* Ensure the pseudo-element doesn't overflow */
+}
+
+/* Overlay Gradient */
+.showcase::before {
+    content: ''; /* Required for pseudo-elements */
+    position: absolute; /* Position it absolutely */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    right: 0; /* Align to the right */
+    bottom: 0; /* Align to the bottom */
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.4) 0%, /* Dark shadow at the top */
+        rgba(0, 0, 0, 0.2) 10px, /* Slightly lighter shadow */
+        rgba(0, 0, 0, 0) 20px /* Transparent at the bottom */
+    ); /* Gradient from dark to transparent */
+    z-index: 1; /* Ensure it sits above the background image */
+}
+
+.showcase > * {
+    position: relative; /* Ensure content is above the gradient */
+    z-index: 2; /* Content above the gradient */
+}
+
+.showcase h2 {
+    font-size: 45px !important; /* Increased font size for h3 and made it important */
+    margin-top: -10px; /* Move the text up by adding a negative top margin */
+    margin-bottom: 20px; /* Adjust bottom margin as needed */
+}
+
+.showcase p {
+    font-size: 25px !important; /* Increased font size for p and made it important */
+}
+
+.services {
+    position: relative; /* Position relative for the pseudo-element */
+    background-image: url('../images/cool-background.svg'); /* Path to your background image */
+    background-size: cover; /* Cover the entire section */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    
+    padding: 60px 40px;
+    color: #ffffff; /* Keep text color white for contrast */
+    overflow: hidden; /* Ensure the pseudo-element doesn't overflow */
+}
+
+.services::before {
+    content: ''; /* Required for pseudo-elements */
+    position: absolute; /* Position it absolutely */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    right: 0; /* Align to the right */
+    bottom: 0; /* Align to the bottom */
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.4) 0%, /* Dark shadow at the top */
+        rgba(0, 0, 0, 0.2) 10px, /* Slightly lighter shadow */
+        rgba(0, 0, 0, 0) 20px /* Transparent at the bottom */
+    ); /* Gradient from dark to transparent */
+    z-index: 1; /* Ensure it sits above the background image */
+}
+
+.services > * {
+    position: relative; /* Ensure content is above the gradient */
+    z-index: 2; /* Content above the gradient */
+}
+
+.services h2 {
+    color: #ffffff; /* Changed font color to white for h1 text */
+}
+.services h2, .services p {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Services Section */
+.services .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 -10px; /* Negative margin to compensate for padding */
+}
+
+.services .card {
+    background-color: #f0f0f0; /* Brighter background color (adjust as needed) */
+    background: linear-gradient(
+        rgba(255, 255, 255, 0.8), /* Very faint white at the top */
+        rgba(255, 255, 255, 0) /* Transparent at the bottom */
+    ), #f0f0f0; /* Fallback color */
+    flex: 1 1 calc(33.333% - 20px); /* Adjusted flex basis */
+    margin: 10px;
+    padding: 30px;
+    text-align: center;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 5px var(--shadow-color);
+    color: #000000;
+}
+
+.services .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2); /* Enhanced hover effect */
+}
+
+.card-icon {
+    width: 100px; /* Set width to 100 pixels */
+    height: 100px; /* Set height to 100 pixels */
+    object-fit: contain; /* Maintain aspect ratio and fit within the specified dimensions */
+    display: block; /* Ensure it behaves like a block element */
+    margin: 0 auto 10px; /* Center the icon and add space below */
+}
+
+/* Contact Section */
+.contact {
+    background-color: var(--secondary-color); /* Set to your desired background color */
+    color: #ffffff; /* Text color for contrast */
+    padding: 60px 40px;
+    text-align: center;
+}
+
+.contact-icon {
+    width: 150px; /* Set width to a larger size, e.g., 70 pixels */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Ensure it behaves like a block element */
+    margin: 10px auto; /* Center the icon and add space above and below */
+}
+
+.contact h2 {
+    color: #ffffff;
+}
+
+.contact p, .contact a {
+    color: #ffffff;
+}
+
+.contact a:hover {
+    color: var(--hover-primary);
+    text-decoration: underline;
+}
+
+/* Footer Banner */
+.footer-banner {
+    position: relative;
+    margin-top: -10px;
+    background-color: var(--dark-background);
+    text-align: center; /* Center the text below the image */
+    padding: 30px 0; /* Add some padding for spacing */
+    display: flex; /* Flexbox for better alignment */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center items horizontally */
+}
+
+.footer-text {
+    color: white; /* Change text color for visibility */
+    font-size: 16px; /* Adjust font size as needed */
+    margin-top: 15px; /* Increase this value to push the text further down */
+    display: block; /* Ensure the text behaves as a block element */
+}
+
+.footer-banner img {
+    max-width: 40%;
+    height: auto;
+    display: block; /* Ensures the image doesn't add extra space */
+    margin: 0 auto; /* Center the image */
+    /* Optional: Add a filter if needed */
+    /* filter: brightness(0.8); */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .services .card {
+        flex: 1 1 calc(50% - 20px);
+    }
+
+    .projects .project-card {
+        flex: 1 1 calc(100% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .services .card, .projects .project-card {
+        flex: 1 1 calc(100% - 20px);
+    }
+
+    section {
+        padding: 40px 20px;
+    }
+}
+
+
+
+

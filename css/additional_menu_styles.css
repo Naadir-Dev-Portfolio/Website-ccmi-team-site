@@ -1,0 +1,286 @@
+
+/* menu_styles.css */
+
+/* Root Variables */
+:root {
+    --primary-color: #f04f23; /* Primary Orange */
+    --secondary-color: #2c3e50; /* Updated Secondary Dark Blue */
+    --accent-color: #6a1b9a; /* Accent Purple */
+    --dark-background: #2c3e50; /* Updated Sidebar and menu background */
+    --light-background: #ffffff; /* Main content background */
+    --text-color: #333333; /* Main text color */
+    --hover-primary: #d9471f; /* Hover for Orange */
+    --hover-secondary: #541570; /* Hover for Purple */
+    --border-color: #e0e0e0; /* Border color for elements */
+    --shadow-color: rgba(0, 0, 0, 0.1); /* Shadow color */
+
+    /* New Variables for Menu Colors */
+    --menu-bg-color: #34495e; /* Main menu background color */
+    --menu-hover-bg-color: #3a539b; /* Main menu hover color */
+    --menu-text-color: #ffffff; /* Menu text color */
+}
+
+/* Sidebar Styles */
+#sidebar {
+    width: 335px;
+    background-color: var(--dark-background);
+    color: #ecf0f1;
+    flex-shrink: 0;
+    position: fixed;
+    height: 100%;
+    overflow-y: scroll; /* Always show vertical scrollbar */
+    overflow-x: hidden; /* Prevent horizontal overflow */
+    transition: width 0.3s ease;
+
+    /* Prevent width change when scrollbar appears */
+    scrollbar-gutter: stable; /* Reserves space for scrollbar */
+}
+
+/* Collapsed Sidebar */
+#sidebar.collapsed {
+    width: 80px;
+}
+
+/* Customize Scrollbar for WebKit Browsers */
+#sidebar::-webkit-scrollbar {
+    width: 8px;
+}
+
+#sidebar::-webkit-scrollbar-track {
+    background: #2c3e50;
+}
+
+#sidebar::-webkit-scrollbar-thumb {
+    background-color: #34495e;
+    border-radius: 4px;
+}
+
+#sidebar::-webkit-scrollbar-thumb:hover {
+    background-color: #3a539b;
+}
+
+/* Sidebar Content */
+.sidebar-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    /* Removed justify-content to prevent shifting */
+}
+
+/* Prevent Elements Above Menu from Shrinking */
+.logo,
+.nav:first-of-type,
+.nav h3 {
+    flex-shrink: 0;
+}
+
+/* Push Elements Below Menu to Bottom */
+.date-copy-section,
+footer {
+    margin-top: auto;
+}
+
+/* Toggle Button */
+#toggle-sidebar {
+    position: absolute;
+    top: 20px;
+    right: -20px;
+    background-color: var(--primary-color);
+    border: none;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 5px var(--shadow-color);
+    transition: transform 0.3s ease;
+}
+
+#sidebar.collapsed #toggle-sidebar {
+    transform: rotate(180deg);
+}
+
+/* Company Logo */
+.logo {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.logo img {
+    transition: width 0.3s ease;
+    max-width: 40%; /* Reduced from 50% to 40% */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+#sidebar.collapsed .logo img {
+    width: 50px;
+}
+
+/* Navigation */
+.nav {
+    padding: 0 20px;
+}
+
+.nav h3 {
+    margin-top: 35px; /* Added space above "Navigation" and "Shortcut Links" */
+    margin-bottom: 10px;
+    font-size: 18px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 5px;
+    color: var(--menu-text-color);
+}
+
+.nav ul {
+    list-style: none;
+    padding-left: 5px; /* Added a small padding of 5px on the left */
+}
+
+.nav ul li {
+    margin-bottom: 10px;
+}
+
+.nav ul li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s;
+}
+
+.menu-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.menu-text {
+    flex: 1;
+}
+
+.nav ul li.spacer {
+    height: 5px;
+}
+
+.nav ul .custom-divider {
+    width: 100%;
+    height: 1px;
+    background-color: var(--border-color);
+    margin: 10px 0;
+}
+
+.nav ul li a i {
+    margin-right: 10px;
+    min-width: 20px;
+    text-align: center;
+}
+
+#sidebar.collapsed .nav ul li a span {
+    display: none;
+}
+
+.nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* Shortcut Links Section */
+.menu-section {
+    cursor: pointer;
+    font-size: 14px;
+    margin: 2px 0;
+    padding: 8px;
+    background-color: var(--menu-bg-color);
+    color: var(--menu-text-color);
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.menu-section:hover {
+    background-color: var(--menu-hover-bg-color);
+}
+
+.sub-menu {
+    display: none;
+    margin-left: 15px;
+    font-size: 13px;
+    color: var(--menu-text-color);
+}
+
+.sub-menu a {
+    display: block;
+    padding: 6px 10px;
+    color: var(--menu-text-color);
+    background-color: var(--menu-bg-color); /* Match the main menu buttons */
+    margin: 2px 0;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+}
+
+.sub-menu a:hover {
+    background-color: var(--menu-hover-bg-color);
+}
+
+.icon {
+    font-size: 16px;
+    color: var(--menu-text-color);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+}
+
+/* Date Copy Feature */
+.date-copy-section {
+    padding: 20px;
+    background-color: var(--menu-bg-color);
+    border-top: 1px solid var(--border-color);
+}
+
+.date-copy-section h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: var(--menu-text-color);
+}
+
+.date-display {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.date-display p {
+    margin: 0;
+    font-size: 14px;
+    color: #ecf0f1;
+}
+
+.date-buttons button {
+    margin-left: 5px;
+    padding: 5px 10px;
+    font-size: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: #fff;
+    transition: background-color 0.3s;
+}
+
+.date-buttons button:hover {
+    background-color: var(--hover-primary);
+}
+
+#sidebar.collapsed .date-copy-section h3,
+#sidebar.collapsed .date-copy-section p {
+    display: none;
+}

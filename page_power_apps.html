@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Applications - CCMI Systems & Data Team</title>
+    <!-- CCMI Logo Favicon -->
+    <link rel="icon" href="favicon.png" type="image/x-icon">
+    <!-- Global Styles -->
+    <link rel="stylesheet" href="css/global_styles.css">
+    <!-- Component Styles -->
+    <link rel="stylesheet" href="css/additional_menu_styles.css">
+    <link rel="stylesheet" href="css/main_content_styles.css">
+    <link rel="stylesheet" href="css/page_power_apps.css">
+    <link rel="stylesheet" href="css/additional_hero_styles.css">
+    <!-- Page-specific Styles -->
+
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside id="sidebar">
+        <div class="sidebar-content">
+            <!-- Toggle Button -->
+            <button id="toggle-sidebar"><i class="fas fa-chevron-left"></i></button>
+
+            <!-- Team Logo -->
+            <div class="logo">
+                <img src="images/teamlogo3.png" alt="Team Logo">
+            </div>
+            <!-- Navigation -->
+            <nav class="nav">
+                <h3>Navigation</h3>
+                <ul>
+                    <li class="spacer"></li>  <!-- Spacer-->
+                    <li><a href="index.html">
+                        <img src="icons/menu-icon-home.png" alt="Home Icon" class="menu-icon">
+                        <span class="menu-text">Home</span>
+                    </a></li>
+                    <li><a href="page_power_apps.html">
+                        <img src="icons/menu-icon-papp.png" alt="CCMI Power Apps Icon" class="menu-icon">
+                        <span class="menu-text">CCMI Power Apps</span>
+                    </a></li>
+                    <li><a href="page_power_bi.html">
+                        <img src="icons/menu-icon-pbi.png" alt="PowerBI Icon" class="menu-icon">
+                        <span class="menu-text">CCMI PowerBI Reports</span>
+                    </a></li>
+                    <li><a href="page_documents.html">
+                        <img src="icons/menu-icon-doc.png" alt="CCMI Documentation Icon" class="menu-icon">
+                        <span class="menu-text">CCMI Documentation</span>
+                    </a></li>
+
+                    <li><a href="page_snippets.html">
+                        <img src="icons/menu-icon-snippet.png" alt="Code Snippets Icon" class="menu-icon">
+                        <span class="menu-text">Code Snippets</span>
+                    </a></li>
+                    <li>
+                        <a href="https://ccmi-genai.streamlit.app/" onclick="return showApiKeyWarning(event, 'To use this tool you will need an API key from Google. This is for development and experimental purposes only, please speak to Naadir if you want to learn how to obtain an API key.')" target="_blank">
+                            <img src="icons/menu-icon-ai.png" alt="CCMI Gen AI Assistant" class="menu-icon">
+                            <span class="menu-text">CCMI Gen AI Assistant</span>
+                        </a>
+                    </li>
+                    <li class="spacer"></li>  <!-- Spacer-->
+                    <li class="custom-divider"></li>
+                    <li class="spacer"></li> 
+
+                    <li>
+                        <a href="#" onclick="showDemoAlert(event)">
+                            <img src="icons/icon.png" alt="Depot Icon" class="menu-icon">
+                            <span class="menu-text">Depot</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="showDemoAlert(event)">
+                            <img src="icons/icon.png" alt="MySAP Services Icon" class="menu-icon">
+                            <span class="menu-text">MySAP Services</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="showDemoAlert(event)">
+                            <img src="icons/icon.png" alt="Success Factors Icon" class="menu-icon">
+                            <span class="menu-text">Success Factors</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="showDemoAlert(event)">
+                            <img src="icons/icon.png" alt="Service Icon" class="menu-icon">
+                            <span class="menu-text">IT Service Now Portal</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Shortcut Links Section -->
+            <nav class="nav">
+                <h3>Production Systems</h3>
+                <!-- Dynamic JavaScript Menu -->
+                <div id="menu-container">
+                    <!-- Menu will be injected here via JavaScript -->
+                </div>
+            </nav>
+
+	        <br></br>
+
+            <!-- Date Copy Feature -->
+            <div class="date-copy-section">
+                <h3>Yesterday's Date</h3>
+                <div class="date-display">
+                    <p class="current-date"></p>
+                    <div class="date-buttons">
+                        <button onclick="changeDateFormat()">Change Format</button>
+                        <button onclick="copyToClipboard(document.querySelector('.current-date').textContent)">Copy</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer>
+                <p><span id="current-year"></span> Made by Naadir D for the CCMI Team</p>
+            </footer>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Header Area -->
+        <section class="page-header hero applications-hero">
+            <div class="hero-content">
+                <div class="overlay"></div> <!-- Overlay div -->
+                <div class="power-apps-header">
+                    <img src="icons/powerapps.png" alt="Power Apps Logo" style="height: 70px; width: 70px;">
+                    <h2>Power Apps</h2>
+                </div>
+            </div>
+        </section>
+
+        
+        <!-- Application Selection Area -->
+        <section class="app-selection">
+            <h2 class="section-title">Internal CCMI Power Apps</h2>
+            <!-- Introductory Text -->
+            <p class="intro-text">
+                Below is a selection of internal CCMI applications utilized within our team.<br>
+                For access to our external applications, please visit this <a href="https://example.com">link</a>.
+            </p>
+            <!-- Toggle Layout Button -->
+            <button id="toggle-layout-button" onclick="toggleLayout()">Switch to One Column</button>
+
+            <div class="app-row" id="app-row-1">
+                <!-- Column 1 -->
+                <div class="app-column">
+                    <label for="app-select-1">Select an Application:</label>
+                    <select id="app-select-1" onchange="updateIframe('1')">
+                        <option value="" disabled selected>Select an application</option>
+                        <option value="https://example.com">Example App 1</option>
+                        <option value="https://example.com">Example App 2</option>
+                        <option value="https://example.com">Example App 3</option>
+                        <option value="https://example.com">Example App 4</option>
+                        <option value="https://example.com">Example App 5</option>
+                        <option value="https://example.com">Example App 6</option>
+                        <option value="https://example.com">Example App 7</option>
+                    </select>
+                    <!-- App Actions -->
+                    <div class="app-actions" id="app-actions-1" style="display: none;">
+                        <button class="action-button refresh-button" data-iframe-id="app-iframe-1" onclick="refreshApp(event)" aria-label="Refresh App">
+                            <img src="icons/refresh-icon.png" alt="Refresh" class="button-icon">
+                            <span>Refresh</span>
+                        </button>
+                        <button class="action-button fullscreen-button" data-iframe-id="app-iframe-1" onclick="toggleFullScreen(event)" aria-label="Full Screen">
+                            <img src="icons/fullscreen-icon.png" alt="Full Screen" class="button-icon">
+                            <span>Full Screen</span>
+                        </button>
+                    </div>
+                    <!-- Iframe -->
+                    <iframe id="app-iframe-1" src="" width="100%" height="850px" frameborder="0"></iframe>
+                    <!-- Open in New Tab Button -->
+                    <button id="open-button-1" class="open-button" onclick="openInNewTab('1')">Open in New Tab</button>
+                </div>
+                <!-- Column 2 -->
+                <div class="app-column">
+                    <label for="app-select-2">Select an Application:</label>
+                    <select id="app-select-2" onchange="updateIframe('2')">
+                        <option value="" disabled selected>Select an application</option>
+                        <option value="https://example.com">Example App 1</option>
+                        <option value="https://example.com">Example App 2</option>
+                        <option value="https://example.com">Example App 3</option>
+                        <option value="https://example.com">Example App 4</option>
+                        <option value="https://example.com">Example App 5</option>
+                        <option value="https://example.com">Example App 6</option>
+                        <option value="https://example.com">Example App 7</option>
+                    </select>
+                    <!-- App Actions -->
+                    <div class="app-actions" id="app-actions-2" style="display: none;">
+                        <button class="action-button refresh-button" data-iframe-id="app-iframe-2" onclick="refreshApp(event)" aria-label="Refresh App">
+                            <img src="icons/refresh-icon.png" alt="Refresh" class="button-icon">
+                            <span>Refresh</span>
+                        </button>
+                        <button class="action-button fullscreen-button" data-iframe-id="app-iframe-2" onclick="toggleFullScreen(event)" aria-label="Full Screen">
+                            <img src="icons/fullscreen-icon.png" alt="Full Screen" class="button-icon">
+                            <span>Full Screen</span>
+                        </button>
+                    </div>
+                    <!-- Iframe -->
+                    <iframe id="app-iframe-2" src="" width="100%" height="850px" frameborder="0"></iframe>
+                    <!-- Open in New Tab Button -->
+                    <button id="open-button-2" class="open-button" onclick="openInNewTab('2')">Open in New Tab</button>
+                </div>
+            </div>
+
+            <!-- Expandable Section for Additional Apps -->
+            <section class="expandable-section">
+                <button class="expand-button" onclick="toggleExpandable()">Show More Apps</button>
+                <div id="expandable-content" style="display: none;">
+                    <div class="app-row" id="app-row-2">
+                        <!-- Column 3 -->
+                        <div class="app-column">
+                            <label for="app-select-3">Select an Application:</label>
+                            <select id="app-select-3" onchange="updateIframe('3')">
+                                <option value="" disabled selected>Select an application</option>
+                                <option value="https://apps.powerapps.com/play/e/b4016bdf-d476-4c6b-80f1-ab29055b8d71/a/4ad6d92b-186f-4803-a836-e3a807ce2f59?tenantId=de0d74aa-9914-4bb9-9235-fbefe83b1769&hint=39868a9f-e5f1-4c3a-9a0e-aab7403fdfce&sourcetime=1726586745986">MIRA</option>
+                                <option value="https://apps.powerapps.com/play/e/b4016bdf-d476-4c6b-80f1-ab29055b8d71/a/a3622e39-c862-4064-a361-a89c327690b3?tenantId=de0d74aa-9914-4bb9-9235-fbefe83b1769&hint=9cdc01b8-d7f0-48ec-ba28-fb6817bb8c34&sourcetime=1726586726518">CCMI Workload Tracker</option>
+                                <option value="https://apps.powerapps.com/play/e/b4016bdf-d476-4c6b-80f1-ab29055b8d71/a/0a8ca27a-182d-4ea9-b75b-79d55114db42?tenantId=de0d74aa-9914-4bb9-9235-fbefe83b1769&sourcetime=1726586625911">Power BI Admin Center</option>
+                                <option value="https://apps.powerapps.com/play/e/b4016bdf-d476-4c6b-80f1-ab29055b8d71/a/24eb788d-20a0-4979-9da0-16c7517577d5?tenantId=de0d74aa-9914-4bb9-9235-fbefe83b1769&sourcetime=1726586921242">CCMI System Centre</option>
+                                <option value="https://apps.powerapps.com/play/e/b4016bdf-d476-4c6b-80f1-ab29055b8d71/a/41865c1b-58d9-4269-bba2-27e086716a73?tenantId=de0d74aa-9914-4bb9-9235-fbefe83b1769&hint=0478a1ca-fdb6-4e36-a459-65b56088409e&sourcetime=1726586674423">CCMI Request System - End user app</option>
+                                <option value="https://apps.powerapps.com/play/e/b4016bdf-d476-4c6b-80f1-ab29055b8d71/a/005931a2-eb63-4533-aaa4-85908ec308fd?tenantId=de0d74aa-9914-4bb9-9235-fbefe83b1769&hint=988680fd-c3c1-4333-b315-21eb0c55ff62&sourcetime=1726586859603">Power BI Request System - End user app</option>
+                                <option value="https://apps.powerapps.com/play/e/b4016bdf-d476-4c6b-80f1-ab29055b8d71/a/3db21a54-2c6a-493e-8083-8b20e247822c?tenantId=de0d74aa-9914-4bb9-9235-fbefe83b1769&hint=51c11250-c503-4205-b523-fbbc94515598&sourcetime=1726586892008">Power BI Build Tracker</option>
+                                <option value="" disabled>Developer version - These options are for Power Apps devs - Use only if advised to</option> 
+                                <option value="https://apps.powerapps.com/play/e/6445976a-1b1e-e300-9696-9de0fccd64ae/a/1d281a67-d580-47cb-82a8-704f3fe80167?tenantId=de0d74aa-9914-4bb9-9235-fbefe83b1769&hint=e77e3ec8-28ed-4d4a-924f-e08a6becfc34&sourcetime=1726587099190">Dev - MIRA</option>
+                                <option value="https://apps.powerapps.com/play/e/6445976a-1b1e-e300-9696-9de0fccd64ae/a/33fa6d3b-a380-4e5e-8c3e-27483977f5f3?tenantId=de0d74aa-9914-4bb9-9235-fbefe83b1769&hint=33fcde0a-1fbd-4c6d-9512-4c0a3575a46e&sourcetime=1726587111202">Dev - CCMI Workload Tracker</option>
+                                <option value="https://apps.powerapps.com/play/e/6445976a-1b1e-e300-9696-9de0fccd64ae/a/d906e82b-8b74-42a5-b27f-ff6faebb0ac9?tenantId=de0d74aa-9914-4bb9-9235-fbefe83b1769&sourcetime=1726587016052">Dev - Power BI Admin Center</option>
+                                <option value="https://apps.powerapps.com/play/e/6445976a-1b1e-e300-9696-9de0fccd64ae/a/2f2a0dea-1989-49aa-99e1-db358869c346?tenantId=de0d74aa-9914-4bb9-9235-fbefe83b1769&sourcetime=1726587077965">Dev - CCMI System Centre</option>
+                                <option value="https://apps.powerapps.com/play/e/6445976a-1b1e-e300-9696-9de0fccd64ae/a/4e752347-7f91-440c-9d2a-5f8f67d4279a?tenantId=de0d74aa-9914-4bb9-9235-fbefe83b1769&hint=746834ba-9c2d-4a39-b9af-68c28f719e9f&sourcetime=1726587179355">Dev - CCMI Request System - End user app</option>
+                                <option value="https://apps.powerapps.com/play/e/6445976a-1b1e-e300-9696-9de0fccd64ae/a/877d10c8-a067-491b-b334-03c47b7602c9?tenantId=de0d74aa-9914-4bb9-9235-fbefe83b1769&hint=2e745ae8-261c-405d-891a-86e5b5185d08&sourcetime=1726587129586">Dev - Power BI Request System - End user app</option>
+                                <option value="https://apps.powerapps.com/play/e/6445976a-1b1e-e300-9696-9de0fccd64ae/a/e68dfe54-f6ef-4cd7-9ced-2612b425e91c?tenantId=de0d74aa-9914-4bb9-9235-fbefe83b1769&hint=7e543c2a-c3fe-4800-8078-15203121626d&sourcetime=1726587214163">Dev - Power BI Build Tracker</option>
+                            </select>
+                            <!-- App Actions -->
+                            <div class="app-actions" id="app-actions-3" style="display: none;">
+                                <button class="action-button refresh-button" data-iframe-id="app-iframe-3" onclick="refreshApp(event)" aria-label="Refresh App">
+                                    <img src="icons/refresh-icon.png" alt="Refresh" class="button-icon">
+                                    <span>Refresh</span>
+                                </button>
+                                <button class="action-button fullscreen-button" data-iframe-id="app-iframe-3" onclick="toggleFullScreen(event)" aria-label="Full Screen">
+                                    <img src="icons/fullscreen-icon.png" alt="Full Screen" class="button-icon">
+                                    <span>Full Screen</span>
+                                </button>
+                            </div>
+                            <!-- Iframe -->
+                            <iframe id="app-iframe-3" src="" width="100%" height="850px" frameborder="0" style="display:none;"></iframe>
+                            <!-- Open in New Tab Button -->
+                            <button id="open-button-3" class="open-button" onclick="openInNewTab('3')" style="display:none;">Open in New Tab</button>
+                        </div>
+                        <!-- Column 4 -->
+                        <div class="app-column">
+                            <label for="app-select-4">Select an Application:</label>
+                            <select id="app-select-4" onchange="updateIframe('4')">
+                                <option value="" disabled selected>Select an application</option>
+                                <option value="https://apps.powerapps.com/play/e/b4016bdf-d476-4c6b-80f1-ab29055b8d71/a/4ad6d92b-186f-4803-a836-e3a807ce2f59?tenantId=de0d74aa-9914-4bb9-9235-fbefe83b1769&hint=39868a9f-e5f1-4c3a-9a0e-aab7403fdfce&sourcetime=1726586745986">MIRA</option>
+                                <option value="https://apps.powerapps.com/play/e/b4016bdf-d476-4c6b-80f1-ab29055b8d71/a/a3622e39-c862-4064-a361-a89c327690b3?tenantId=de0d74aa-9914-4bb9-9235-fbefe83b1769&hint=9cdc01b8-d7f0-48ec-ba28-fb6817bb8c34&sourcetime=1726586726518">CCMI Workload Tracker</option>
+                                <option value="https://apps.powerapps.com/play/e/b4016bdf-d476-4c6b-80f1-ab29055b8d71/a/0a8ca27a-182d-4ea9-b75b-79d55114db42?tenantId=de0d74aa-9914-4bb9-9235-fbefe83b1769&sourcetime=1726586625911">Power BI Admin Center</option>
+                                <option value="https://apps.powerapps.com/play/e/b4016bdf-d476-4c6b-80f1-ab29055b8d71/a/24eb788d-20a0-4979-9da0-16c7517577d5?tenantId=de0d74aa-9914-4bb9-9235-fbefe83b1769&sourcetime=1726586921242">CCMI System Centre</option>
+                                <option value="https://apps.powerapps.com/play/e/b4016bdf-d476-4c6b-80f1-ab29055b8d71/a/41865c1b-58d9-4269-bba2-27e086716a73?tenantId=de0d74aa-9914-4bb9-9235-fbefe83b1769&hint=0478a1ca-fdb6-4e36-a459-65b56088409e&sourcetime=1726586674423">CCMI Request System - End user app</option>
+                                <option value="https://apps.powerapps.com/play/e/b4016bdf-d476-4c6b-80f1-ab29055b8d71/a/005931a2-eb63-4533-aaa4-85908ec308fd?tenantId=de0d74aa-9914-4bb9-9235-fbefe83b1769&hint=988680fd-c3c1-4333-b315-21eb0c55ff62&sourcetime=1726586859603">Power BI Request System - End user app</option>
+                                <option value="https://apps.powerapps.com/play/e/b4016bdf-d476-4c6b-80f1-ab29055b8d71/a/3db21a54-2c6a-493e-8083-8b20e247822c?tenantId=de0d74aa-9914-4bb9-9235-fbefe83b1769&hint=51c11250-c503-4205-b523-fbbc94515598&sourcetime=1726586892008">Power BI Build Tracker</option>
+                                <option value="" disabled>Developer version - These options are for Power Apps devs - Use only if advised to</option> 
+                                <option value="https://apps.powerapps.com/play/e/6445976a-1b1e-e300-9696-9de0fccd64ae/a/1d281a67-d580-47cb-82a8-704f3fe80167?tenantId=de0d74aa-9914-4bb9-9235-fbefe83b1769&hint=e77e3ec8-28ed-4d4a-924f-e08a6becfc34&sourcetime=1726587099190">Dev - MIRA</option>
+                                <option value="https://apps.powerapps.com/play/e/6445976a-1b1e-e300-9696-9de0fccd64ae/a/33fa6d3b-a380-4e5e-8c3e-27483977f5f3?tenantId=de0d74aa-9914-4bb9-9235-fbefe83b1769&hint=33fcde0a-1fbd-4c6d-9512-4c0a3575a46e&sourcetime=1726587111202">Dev - CCMI Workload Tracker</option>
+                                <option value="https://apps.powerapps.com/play/e/6445976a-1b1e-e300-9696-9de0fccd64ae/a/d906e82b-8b74-42a5-b27f-ff6faebb0ac9?tenantId=de0d74aa-9914-4bb9-9235-fbefe83b1769&sourcetime=1726587016052">Dev - Power BI Admin Center</option>
+                                <option value="https://apps.powerapps.com/play/e/6445976a-1b1e-e300-9696-9de0fccd64ae/a/2f2a0dea-1989-49aa-99e1-db358869c346?tenantId=de0d74aa-9914-4bb9-9235-fbefe83b1769&sourcetime=1726587077965">Dev - CCMI System Centre</option>
+                                <option value="https://apps.powerapps.com/play/e/6445976a-1b1e-e300-9696-9de0fccd64ae/a/4e752347-7f91-440c-9d2a-5f8f67d4279a?tenantId=de0d74aa-9914-4bb9-9235-fbefe83b1769&hint=746834ba-9c2d-4a39-b9af-68c28f719e9f&sourcetime=1726587179355">Dev - CCMI Request System - End user app</option>
+                                <option value="https://apps.powerapps.com/play/e/6445976a-1b1e-e300-9696-9de0fccd64ae/a/877d10c8-a067-491b-b334-03c47b7602c9?tenantId=de0d74aa-9914-4bb9-9235-fbefe83b1769&hint=2e745ae8-261c-405d-891a-86e5b5185d08&sourcetime=1726587129586">Dev - Power BI Request System - End user app</option>
+                                <option value="https://apps.powerapps.com/play/e/6445976a-1b1e-e300-9696-9de0fccd64ae/a/e68dfe54-f6ef-4cd7-9ced-2612b425e91c?tenantId=de0d74aa-9914-4bb9-9235-fbefe83b1769&hint=7e543c2a-c3fe-4800-8078-15203121626d&sourcetime=1726587214163">Dev - Power BI Build Tracker</option>
+                            </select>
+                            <!-- App Actions -->
+                            <div class="app-actions" id="app-actions-4" style="display: none;">
+                                <button class="action-button refresh-button" data-iframe-id="app-iframe-4" onclick="refreshApp(event)" aria-label="Refresh App">
+                                    <img src="icons/refresh-icon.png" alt="Refresh" class="button-icon">
+                                    <span>Refresh</span>
+                                </button>
+                                <button class="action-button fullscreen-button" data-iframe-id="app-iframe-4" onclick="toggleFullScreen(event)" aria-label="Full Screen">
+                                    <img src="icons/fullscreen-icon.png" alt="Full Screen" class="button-icon">
+                                    <span>Full Screen</span>
+                                </button>
+                            </div>
+                            <!-- Iframe -->
+                            <iframe id="app-iframe-4" src="" width="100%" height="850px" frameborder="0" style="display:none;"></iframe>
+                            <!-- Open in New Tab Button -->
+                            <button id="open-button-4" class="open-button" onclick="openInNewTab('4')" style="display:none;">Open in New Tab</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- Footer Banner -->
+        <div class="footer-banner">
+            <img src="images/banner.png" alt="Footer Banner">
+            <p class="footer-text">Created in 2024 by Naadir D for the CCMI Team</p>
+        </div>
+    </main>
+
+    <!-- Include JavaScript Files -->
+    <script src="js/global_scripts.js"></script>
+    <script src="js/menu_scripts.js"></script>
+    <script>
+        function updateIframe(column) {
+            const appSelect = document.getElementById('app-select-' + column);
+            const iframe = document.getElementById('app-iframe-' + column);
+            const openButton = document.getElementById('open-button-' + column);
+            const appActions = document.getElementById('app-actions-' + column);
+
+            if (appSelect.value) {
+                iframe.src = appSelect.value;
+                iframe.style.display = 'block';
+                openButton.style.display = 'block'; // Show the button
+                if (appActions) {
+                    appActions.style.display = 'flex'; // Show the app actions
+                }
+            } else {
+                iframe.src = '';
+                iframe.style.display = 'none';
+                openButton.style.display = 'none'; // Hide the button
+                if (appActions) {
+                    appActions.style.display = 'none'; // Hide the app actions
+                }
+            }
+        }
+
+        function refreshApp(event) {
+            const button = event.currentTarget;
+            const iframeId = button.getAttribute('data-iframe-id');
+            const iframe = document.getElementById(iframeId);
+            if (iframe) {
+                iframe.src = iframe.src; // Reloads the iframe
+            }
+        }
+
+        function toggleFullScreen(event) {
+            const button = event.currentTarget;
+            const iframeId = button.getAttribute('data-iframe-id');
+            const iframe = document.getElementById(iframeId);
+            if (!iframe) return;
+
+            if (document.fullscreenElement) {
+                document.exitFullscreen();
+            } else {
+                iframe.requestFullscreen().catch(err => {
+                    alert(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
+                });
+            }
+        }
+
+        function openInNewTab(column) {
+            const appSelect = document.getElementById('app-select-' + column);
+            if (appSelect.value) {
+                window.open(appSelect.value, '_blank');
+            }
+        }
+
+        function toggleExpandable() {
+            const expandableContent = document.getElementById('expandable-content');
+            const expandButton = document.querySelector('.expand-button');
+            if (expandableContent.style.display === 'none') {
+                expandableContent.style.display = 'block';
+                expandButton.textContent = 'Hide Additional Apps';
+            } else {
+                expandableContent.style.display = 'none';
+                expandButton.textContent = 'Show More Apps';
+            }
+        }
+
+        // Function to toggle between one and two columns
+        function toggleLayout() {
+            const appRows = document.querySelectorAll('.app-row');
+            const toggleButton = document.getElementById('toggle-layout-button');
+
+            appRows.forEach(appRow => {
+                appRow.classList.toggle('single-column');
+            });
+
+            if (appRows[0].classList.contains('single-column')) {
+                toggleButton.textContent = 'Switch to Two Columns';
+            } else {
+                toggleButton.textContent = 'Switch to One Column';
+            }
+        }
+
+        // Load default apps on page load
+        window.onload = function() {
+            // Your existing onload code if any
+        };
+    </script>
+    <script src="js/global_scripts.js"></script>
+    <script src="js/menu_scripts.js"></script>
+</body>
+</html>

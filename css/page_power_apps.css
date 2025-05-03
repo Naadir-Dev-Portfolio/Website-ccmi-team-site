@@ -1,0 +1,237 @@
+
+/* Application Selection Styles */
+
+.app-selection {
+    position: relative; /* Position relative for the pseudo-element */
+    background-image: url('../images/hex_bg_op30.png'); /* Path to your background image */
+    background-size: cover; /* Cover the entire section */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    padding: 60px 40px; /* Ensure padding is applied */
+    color: #ffffff; /* Text color for contrast */
+    overflow: hidden; /* Ensure the pseudo-element doesn't overflow */
+}
+
+/* Overlay Gradient */
+.app-selection::before {
+    content: ''; /* Required for pseudo-elements */
+    position: absolute; /* Position it absolutely */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    right: 0; /* Align to the right */
+    bottom: 0; /* Align to the bottom */
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.4) 0%, /* Dark shadow at the top */
+        rgba(0, 0, 0, 0.2) 10px, /* Slightly lighter shadow */
+        rgba(0, 0, 0, 0) 20px /* Transparent at the bottom */
+    ); /* Gradient from dark to transparent */
+    z-index: 1; /* Ensure it sits above the background image */
+}
+
+.app-selection > * {
+    position: relative; /* Ensure content is above the gradient */
+    z-index: 2; /* Content above the gradient */
+}
+
+
+.app-selection, .expandable-section {
+    padding: 20px;
+}
+
+.app-row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.app-column {
+    flex: 1 1 calc(50% - 20px);
+    margin: 10px;
+}
+
+.app-column label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.app-column select {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--dark-background);
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    appearance: none; /* Remove default arrow */
+    background-image: url('../icons/arrow-down-white.png'); /* Custom arrow icon */
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+    font-size: 16px;
+}
+
+.app-column select:focus {
+    outline: none;
+}
+
+.app-column iframe {
+    border: 1px solid #ccc;
+}
+
+.power-apps-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.power-apps-header img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.power-apps-header h2 {
+    color: var(--text-color);
+}
+
+.expand-button {
+    display: block;
+    width: 200px;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: var(--dark-background);
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.expand-button:hover {
+    background-color: var(--hover-primary);
+}
+
+/* New styles for single-column layout */
+.single-column .app-column {
+    flex: 1 1 100%;
+}
+
+/* Styles for the Toggle Layout Button */
+#toggle-layout-button {
+    display: block;
+    margin: 10px auto 20px auto; /* Center the button with margin */
+    padding: 10px 20px;
+    background-color: var(--dark-background);
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#toggle-layout-button:hover {
+    background-color: var(--hover-primary);
+}
+
+@media (max-width: 768px) {
+    .app-column {
+        flex: 1 1 100%;
+    }
+}
+
+/* Hero Section in page-header */
+.page-header.hero {
+    background: url('../images/hero-background.png') no-repeat center center/cover;
+    height: 250px; /* Adjust as needed */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.page-header.hero h1 {
+    font-size: 36px;
+    margin: 0;
+}
+
+.power-apps-header {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.power-apps-header img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.power-apps-header h2 {
+    font-size: 24px;
+    color: #fff;
+}
+
+/* Open in New Tab Button */
+.open-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: var(--dark-background);
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+}
+
+.open-button:hover {
+    background-color: var(--hover-primary);
+}
+
+/* App Actions Container */
+.app-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 0px; /* Existing margin-top */
+    margin-bottom: 5px; /* Adjust this value to add space below the buttons */
+    justify-content: flex-end; /* Align buttons to the right */
+}
+
+/* Action Buttons */
+.action-button {
+    background-color: var(--dark-background);
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.action-button:hover {
+    background-color: var(--hover-primary);
+}
+
+/* Icon inside Buttons */
+.button-icon {
+    width: 20px;
+    height: 20px;
+    display: block;
+}
+
+.app-actions button {
+    display: flex; /* Ensure the button content is aligned in a row */
+    align-items: center; /* Center the items vertically */
+}
+
+.app-actions img {
+    margin-right: 5px; /* Add some space between the icon and the text */
+}
+
+.app-actions button span {
+    color: white; /* Set the text color to white */
+}

@@ -1,0 +1,201 @@
+.reports-section {
+    position: relative; /* Position relative for the pseudo-element */
+    background-image: url('../images/hex_bg_op30.png'); /* Path to your background image */
+    background-size: cover; /* Cover the entire section */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    padding: 60px 40px; /* Ensure padding is applied */
+    color: #ffffff; /* Text color for contrast */
+    overflow: hidden; /* Ensure the pseudo-element doesn't overflow */
+    min-height: 900px;
+}
+
+/* Overlay Gradient */
+.reports-section::before {
+    content: ''; /* Required for pseudo-elements */
+    position: absolute; /* Position it absolutely */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    right: 0; /* Align to the right */
+    bottom: 0; /* Align to the bottom */
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.4) 0%, /* Dark shadow at the top */
+        rgba(0, 0, 0, 0.2) 10px, /* Slightly lighter shadow */
+        rgba(0, 0, 0, 0) 20px /* Transparent at the bottom */
+    ); /* Gradient from dark to transparent */
+    z-index: 1; /* Ensure it sits above the background image */
+}
+
+.reports-section > * {
+    position: relative; /* Ensure content is above the gradient */
+    z-index: 2; /* Content above the gradient */
+}
+
+.iframe-container {
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100%; /* Ensure it takes full height of the parent */
+    padding: 20px; /* Optional: Add padding for spacing */
+}
+
+.iframe-container iframe {
+    width: 100%; /* Set desired width */
+    height: 800px; /* Set desired height */
+    max-width: 100%; /* Ensure it doesn't exceed the container */
+    border: none; /* Remove default border */
+}
+
+/* Reports Section Styles */
+.reports-section {
+    padding: 20px;
+}
+
+.report-item {
+    margin-bottom: 20px;
+}
+
+.expand-button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: var(--dark-background);
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: left;
+    font-size: 18px;
+    
+    background-image: url('../icons/arrow-down-white.png'); /* Custom arrow icon */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-position: right 10px center; /* Position the image on the right */
+    background-size: 12px; /* Set the size of the image */
+}
+
+.expand-button:hover {
+    background-color: var(--hover-primary);
+}
+
+.report-content {
+    margin-top: 10px;
+}
+
+.report-content iframe {
+    width: 100%;
+    height: 900px; /* Adjust as needed */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: transform 0.3s ease; /* Smooth transition for zoom */
+}
+/* Hero Section Styles */
+.page-header.hero.powerbi-hero {
+    background: url('../images/powerbi-hero-background.jpg') no-repeat center center/cover;
+    height: 250px; /* Adjust as needed */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-header.hero.powerbi-hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Adjust overlay color and opacity */
+}
+
+.powerbi-header {
+    display: flex;
+    align-items: center;
+    position: relative; /* Ensure it appears above the overlay */
+}
+
+.powerbi-header img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.powerbi-header h2 {
+    font-size: 36px;
+    color: #fff;
+}
+
+/********** This esection is for the zooming and panning
+
+/* Iframe Wrapper */
+.iframe-wrapper {
+    position: relative;
+    overflow: auto; /* Allow scrolling */
+    width: 100%;
+    height: 800px; /* Adjust as needed */
+}
+
+/* Iframe Styles */
+.iframe-wrapper iframe {
+    display: block;
+    border: none;
+    width: 100%;
+    height: 100%;
+}
+
+/* Pan Overlay */
+.pan-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: grab;
+    background: transparent;
+    z-index: 1;
+}
+
+/********************************** Seperatoooor **************************/
+
+/* Report Actions Container */
+.report-actions {
+    display: flex;
+    gap: 10px; /* Space between buttons */
+    margin-bottom: 10px;
+}
+
+/* Action Buttons */
+.action-button {
+    background-color: var(--dark-background);
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.action-button:hover {
+    background-color: var(--hover-primary);
+}
+
+/* Icon inside Buttons */
+.button-icon {
+    width: 20px;
+    height: 20px;
+    display: block;
+}
+
+.report-actions img {
+    margin-right: 7px; /* Add some space between the icon and the text */
+}
+
+
+.report-actions button span {
+    color: white; /* Set the text color to white */
+}
+
+
+.report-actions button {
+    display: flex; /* Ensure the button content is aligned in a row */
+    align-items: center; /* Center the items vertically */
+}
+

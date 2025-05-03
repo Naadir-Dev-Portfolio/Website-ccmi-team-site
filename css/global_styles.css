@@ -1,0 +1,86 @@
+
+/* global_styles.css */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #f04f23;       /* Primary Orange */
+    --secondary-color: #2c3e50;     /* Secondary Dark Blue */
+    --accent-color: #6a1b9a;        /* Accent Purple */
+    --dark-background: #2c3e50;     /* Sidebar and menu background */
+    --light-background: #e7e7e7;    /* Main content background */
+    --text-color: #333333;          /* Main text color */
+    --hover-primary: #d9471f;       /* Hover for Orange */
+    --hover-secondary: #541570;     /* Hover for Purple */
+    --border-color: #e0e0e0;        /* Border color for elements */
+    --shadow-color: rgba(0, 0, 0, 0.1); /* Shadow color */
+    /* Add any new color variables if needed */
+}
+
+
+/* Base styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+    background-color: var(--light-background);
+    display: flex;
+    min-height: 100vh;
+    transition: margin-left 0.3s ease;
+    margin: 0;
+    padding: 0;
+    width: 100%; /* Ensure full width */
+}
+
+/* Scrollbar Styles */
+body::-webkit-scrollbar {
+    width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+    background: #ecf0f1;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #bdc3c7;
+    border-radius: 4px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background-color: #95a5a6;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    #sidebar {
+        position: fixed;
+        width: 100%;
+        height: auto;
+        z-index: 1000;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    #sidebar.active {
+        transform: translateX(0);
+    }
+
+    #main-content {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .services .card, .projects .project-card {
+        flex: 1 1 calc(100% - 20px);
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero .tagline {
+        font-size: 20px;
+    }
+}
+

@@ -1,0 +1,186 @@
+/* css/page_snippets.css */
+
+/* Code Snippets Section */
+#code-snippets-section {
+    padding: 20px;
+    background-color: transparent; /* Transparent background */
+}
+
+#code-snippets-section h2 {
+    text-align: center; /* Center align the title */
+    margin-bottom: 10px; /* Reduce margin to remove underline */
+    font-size: 32px;
+    color: var(--text-color);
+    /* Remove the border-bottom */
+}
+
+.section-title-text {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 18px;
+    color: var(--text-color);
+}
+
+/* Search Bar */
+.search-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#search-input {
+    width: 300px;
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px 0 0 4px;
+    outline: none;
+    font-size: 16px;
+}
+
+.search-icon {
+    background-color: var(--secondary-color);
+    color: #fff;
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    border-left: none;
+    border-radius: 0 4px 4px 0;
+    font-size: 16px;
+}
+
+
+/* Snippet Category (e.g., VBA, Power Query M) */
+.snippet-category {
+    margin-bottom: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background-color: transparent; /* Transparent background */
+    box-shadow: 0 2px 5px var(--shadow-color);
+}
+
+.snippet-category-header {
+    padding: 15px;
+    background-color: var(--secondary-color);
+    color: #fff;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 5px 5px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.snippet-category-header:hover {
+    background-color: var(--primary-color); /* Use hover primary color */
+}
+
+.snippet-category-header.active {
+    background-color: var(--primary-color); /* Use hover primary color when active */
+}
+
+.snippet-category-header i {
+    transition: transform 0.3s ease;
+}
+
+.snippet-category-header.active i {
+    transform: rotate(180deg);
+}
+
+.snippet-category-content {
+    display: none;
+    padding: 15px;
+    background-color: transparent; /* Transparent background */
+    border-top: 1px solid var(--border-color);
+}
+
+.snippet-category-content.active {
+    display: block;
+}
+
+/* Snippet */
+.snippet {
+    margin-bottom: 5px; /* Reduced margin to decrease spacing between snippets */
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background-color: transparent; /* Transparent background */
+    position: relative;
+    padding: 5px;
+}
+
+.snippet-header {
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 5px; /* Further reduced margin */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-color);
+    background-color: rgba(0, 123, 255, 0.1); /* Lighter blue background for the expander */
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.snippet-header:hover {
+    color: var(--primary-color); /* Use hover primary color */
+}
+
+.snippet-header.active {
+    color: var(--primary-color);
+}
+
+.snippet-header i {
+    transition: transform 0.3s ease;
+}
+
+.snippet-header.active i {
+    transform: rotate(180deg);
+}
+
+.snippet-content {
+    display: none;
+    white-space: pre-wrap;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: transparent; /* Transparent background */
+    padding: 10px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.snippet-content.active {
+    display: block;
+}
+
+/* Copy Button */
+.copy-btn {
+    position: absolute;
+    top: 10px; /* Position at the top right */
+    right: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    font-size: 14px;
+    opacity: 0.8;
+    transition: opacity 0.3s ease, background-color 0.3s ease;
+}
+
+.copy-btn:hover {
+    background-color: var(--hover-primary);
+    opacity: 1;
+}
+
+/* Prism.js Overrides */
+pre {
+    background: #f4f4f4 !important;
+    padding: 10px !important;
+    border-radius: 5px !important;
+    overflow: auto !important;
+}
+
+code {
+    font-family: 'Courier New', Courier, monospace !important;
+}
