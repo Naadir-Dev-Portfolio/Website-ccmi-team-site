@@ -1,9 +1,17 @@
 # CCMI Systems & Data Team Demo Site
 
+## Demo Screenshot
+
+![Demo Screenshot](images/demoscreen.jpg)
+
 ## Overview
 This demo site was built by Naadir D as a portfolio project to showcase a consolidated dashboard for the CCMI Data Team's work. The site integrates built-in Power Apps and Power BI reports, along with documentation, code snippets, and quick links to production systems and tools. It is designed to streamline access to key resources and automate workflows, providing a centralized hub for the team's data-driven operations.
 
-## Features
+## Author
+
+| Name      | Role                  | Year Created | Team                  |
+|-----------|-----------------------|--------------|-----------------------|
+| Naadir D  | Developer & Author     | 2024         | CCMI Systems & Data Team |
 
 ### Power Apps
 - Access a curated selection of internal CCMI Power Apps used by the team.
@@ -43,26 +51,10 @@ This demo site was built by Naadir D as a portfolio project to showcase a consol
 - Access documentation and code snippets for reference and development support.
 - Use the AI Assistant link for experimental AI tools (requires API key).
 
-## Author
 
-| Name      | Role                  | Year Created | Team                  |
-|-----------|-----------------------|--------------|-----------------------|
-| Naadir D  | Developer & Author     | 2024         | CCMI Systems & Data Team |
-
-## Contact
-
-| Purpose              | Email                          |
-|----------------------|--------------------------------|
-| Power BI queries     | [box.powerbi@demo.com](mailto:box.powerbi@demo.com)  |
-| Power Apps queries   | [box.powerapps@demo.com](mailto:box.powerapps@demo.com)|
-| CCMI team queries    | [box.ccmiteam@demo.com](mailto:box.ccmiteam@demo.com)  |
-
-## Demo Screenshot
-
-![Demo Screenshot](images/demoscreen.jpg)
 
 ## License
 This project is a demo site created for portfolio purposes and internal team use. Please contact the author for any reuse or distribution.
 
 ---
-This README provides a comprehensive overview of the CCMI Systems & Data Team demo site, highlighting its purpose, features, and usage to showcase the author's skills and the team's work to potential employers.
+This README provides a comprehensive overview of the CCMI Systems & Data Team demo site, highlighting its purpose, features, and usage to showcase the author's skills of using different tech stacks to provide solutions.
