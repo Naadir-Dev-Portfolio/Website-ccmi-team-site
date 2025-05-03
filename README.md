@@ -12,7 +12,7 @@ This demo site was built by Naadir D as a portfolio project to showcase a consol
 ![Demo Screenshot](images/demoscreen.jpg)
 
 ### Power Apps
-- Access a curated selection of internal CCMI Power Apps used by the team.
+- Access a curated selection of internal CCMI Microsoft Power Apps used by the team.
 - Interactive interface to select and launch apps within the site or open in new tabs.
 - Supports multiple apps displayed in one or two-column layouts.
 - Includes developer versions for Power Apps developers (access restricted).

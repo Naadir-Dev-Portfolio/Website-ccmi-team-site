@@ -5,47 +5,47 @@ document.addEventListener('DOMContentLoaded', () => {
     const carouselData = [
         {
             imageSrc: 'images/showcase_image1.PNG',
-            link: 'https://app.powerbi.com/groups/me/apps/7c4d33b8-9dd7-4791-88af-fd0f770309ae/reports/02d21157-2def-4b5b-a90b-f40bf46a9f4d/ReportSection?experience=power-bi',
+            link: 'https://example.com',
             label: 'Capital Delivery' // Add label for the first image
         },
         {
             imageSrc: 'images/showcase_image2.PNG',
-            link: 'https://app.powerbi.com/groups/me/apps/7c4d33b8-9dd7-4791-88af-fd0f770309ae/reports/fd48dd03-59d4-4a74-bfef-215a960ecd7e/ReportSection7929641921324f892e1c?experience=power-bi',
+            link: 'https://example.com',
             label: 'Complaints' // Add label for the first image
         },
         {
             imageSrc: 'images/showcase_image3.PNG',
-            link: 'https://app.powerbi.com/groups/me/apps/7c4d33b8-9dd7-4791-88af-fd0f770309ae/reports/7b19d211-9fbf-48fe-84d8-524554cdd2c4/ReportSection6fd8953d6e10efff2ac9?experience=power-bi',
+            link: 'https://example.com',
             label: 'Enquiries' // Add label for the first image
         },
         {
             imageSrc: 'images/showcase_image4.PNG',
-            link: 'https://app.powerbi.com/groups/me/apps/7c4d33b8-9dd7-4791-88af-fd0f770309ae/reports/27c403e0-aaca-47b7-929b-5142994bb3ea/ReportSection54932d91d0dd587bb70e?experience=power-bi',
+            link: 'https://example.com',
             label: 'GSOP' // Add label for the first image
         },
         {
             imageSrc: 'images/showcase_image5.PNG',
-            link: 'https://app.powerbi.com/groups/me/apps/7c4d33b8-9dd7-4791-88af-fd0f770309ae/reports/e9990e88-9ba4-495f-be07-455ac99fc7e9/ReportSectionbd5a5ebc14421b33d5e4?experience=power-bi',
+            link: 'https://example.com',
             label: 'CO Hotspot for FCO' // Add label for the first image
         },
         {
             imageSrc: 'images/showcase_image6.PNG',
-            link: 'https://app.powerbi.com/groups/me/apps/7c4d33b8-9dd7-4791-88af-fd0f770309ae/reports/ca88a768-0b8d-4921-8fa3-0281b1dbdbaa/ReportSection97872efd42102106bd71?experience=power-bi',
+            link: 'https://example.com',
             label: 'Call Handling Statistics' // Add label for the first image
         },
         {
             imageSrc: 'images/showcase_image7.PNG',
-            link: 'https://app.powerbi.com/groups/me/apps/7c4d33b8-9dd7-4791-88af-fd0f770309ae/reports/ca88a768-0b8d-4921-8fa3-0281b1dbdbaa/ReportSectionfcb9aea0901943c81b05?experience=power-bi',
+            link: 'https://example.com',
             label: 'Call Handling Statistics' // Add label for the first image
         },
         {
             imageSrc: 'images/showcase_image8.PNG',
-            link: 'https://app.powerbi.com/groups/me/apps/7c4d33b8-9dd7-4791-88af-fd0f770309ae/reports/cdf36bfe-bf1a-464c-8f27-8107aa20d32e/ReportSectiondd5fee42a0c8d595aab3?experience=power-bi',
+            link: 'https://example.com',
             label: 'Company Cars' // Add label for the first image
         },
         {
             imageSrc: 'images/showcase_image9.PNG',
-            link: 'https://app.powerbi.com/groups/me/apps/7c4d33b8-9dd7-4791-88af-fd0f770309ae/reports/d9b36d8f-22eb-42ab-b245-149089008d7e/ReportSectionfd0712b8cb0978114f03?experience=power-bi',
+            link: 'https://example.com',
             label: 'Innovations and BI' // Add label for the first image
         }
         // Add more slides as needed
