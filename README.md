@@ -1,15 +1,18 @@
 # CCMI Systems & Data Team Demo Site
 
-## Author
+<div align="center">
 
 | Name      | Role                  | Year Created | Team                  |
 |-----------|-----------------------|--------------|-----------------------|
 | Naadir D  | Developer & Author     | 2024         | CCMI Systems & Data Team |
 
-## Overview
-This demo site was built by Naadir D as a portfolio project to showcase a consolidated dashboard for the CCMI Data Team's work. The site integrates built-in Power Apps and Power BI reports, along with documentation, code snippets, and quick links to production systems and tools. It is designed to streamline access to key resources and automate workflows, providing a centralized hub for the team's data-driven operations.
-
 ![Demo Screenshot](images/demoscreen.jpg)
+
+</div>
+
+## Overview
+This site was built by Naadir D as a professional project to showcase a consolidated dashboard for the CCMI Data Team's work. This live version has been been made live for demonstration purposes. The site integrates built-in Power Apps and Power BI reports, along with documentation, code snippets, and quick links to production systems and tools. It is designed to streamline access to key resources and automate workflows, providing a centralized hub for the team's data-driven operations.
+
 
 ### Power Apps
 - Access a curated selection of internal CCMI Microsoft Power Apps used by the team.
@@ -49,10 +52,6 @@ This demo site was built by Naadir D as a portfolio project to showcase a consol
 - Access documentation and code snippets for reference and development support.
 - Use the AI Assistant link for experimental AI tools (requires API key).
 
-
-
 ## License
-This project is a demo site created for portfolio purposes and internal team use. Please contact the author for any reuse or distribution.
+This project is a demo site created for portfolio purposes and internal team use. Please contact me for any reuse or distribution.
 
----
-This README provides a comprehensive overview of the CCMI Systems & Data Team demo site, highlighting its purpose, features, and usage to showcase the author's skills of using different tech stacks to provide solutions.
